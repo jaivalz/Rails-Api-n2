@@ -19,6 +19,8 @@ gem "paperclip"
 
 gem 'bootstrap-sass-extras'
 
+gem 'grape'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
