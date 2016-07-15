@@ -20,6 +20,7 @@ gem "paperclip"
 gem 'bootstrap-sass-extras'
 
 gem 'grape'
+gem 'grape-entity'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
