@@ -21,6 +21,7 @@ gem 'bootstrap-sass-extras'
 
 gem 'grape'
 gem 'grape-entity'
+gem 'hashie-forbidden_attributes'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

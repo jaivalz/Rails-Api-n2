@@ -21,6 +21,23 @@ module Api
           end
         end
 
+        desc "Create a new Vehicle"
+        params do
+          requires :model, type: String
+          requires :description, type: String
+          requires :manufacturer_id, type: Integer
+          requires :image, type: Rack::Multipart::UploadedFile
+          optional :price, type: BigDecimal
+        end
+        post do
+          new_file = ActionDispatch::Http::UploadedFile.new(params[:image])
+          params.delete(:image)
+          vehicle = Vehicle.new(params)
+          if vehicle.save
+            present vehicle, with: Entities::Vehicle
+          end
+        end
+
       end
     end
   end

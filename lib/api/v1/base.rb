@@ -9,6 +9,10 @@ module Api
       rescue_from ActiveRecord::RecordNotFound do
         rack_response({ 'message' => '404 Not found' }.to_json, 404)
       end
+      
+    rescue_from Grape::Exceptions::ValidationErrors do |e|
+      error!({ messages: e.full_messages }, 400)
+    end
 
       rescue_from :all do |exception|
 
